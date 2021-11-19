@@ -54,6 +54,22 @@ alert = #f7768e
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
+green-accent = #9ece6a
+storm-background = #24283b
+terminal-black = #414868
+terminal-black-other = #0f0f14
+comments-blue = #565f89
+parameters-white = #cfc9c2
+html-text = #9aa5ce
+editor-foreground = #a9b1d6
+terminal-white = #c0caf5
+terminal-magenta = #bb9af7
+terminal-cyan = #7dcfff
+html-elements = #2ac3de
+regex-strings = #b4f9f8
+terminal-green = #73daca
+terminal-yellow = #e0af68
+terminal-orange = #ff9e64
 ; =======================
 
 ; Gotham theme ==========
@@ -78,390 +94,11 @@ volume-max = #bf616a
 
 ################################################################################
 ################################################################################
-############                         MAINBAR-I3                     ############
-################################################################################
-################################################################################
-
-[bar/mainbar-i3]
-;https://github.com/jaagr/polybar/wiki/Configuration
-
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-bottom = false
-fixed-center = true
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-; Background gradient (vertical steps)
-;   background-[0-9]+ = #aarrggbb
-;background-0 =
-
-radius = 0.0
-line-size = 2
-line-color = #000000
-
-border-size = 0
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #000000
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = i3 xwindow
-modules-center = kernel
-modules-right = memory2 cpu2 date
-
-separator = |
-
-;dim-value = 1.0
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-#i3: Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-; Fallback click handlers that will be called if
-; there's no matching module handler found.
-click-left =
-click-middle =
-click-right =
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-double-click-left =
-double-click-middle =
-double-click-right =
-
-; Requires polybar to be built with xcursor support (xcb-util-cursor)
-; Possible values are:
-; - default   : The default pointer as before, can also be an empty string (default)
-; - pointer   : Typically in the form of a hand
-; - ns-resize : Up and down arrows, can be used to indicate scrolling
-cursor-click =
-cursor-scroll =
-
-
-################################################################################
-################################################################################
-############                         MAINBAR-I3-EXTRA               ############
-################################################################################
-################################################################################
-
-[bar/mainbar-i3-extra]
-;https://github.com/jaagr/polybar/wiki/Configuration
-
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-bottom = true
-fixed-center = true
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-; Background gradient (vertical steps)
-;   background-[0-9]+ = #aarrggbb
-;background-0 =
-
-radius = 0.0
-line-size = 2
-line-color = #000000
-
-border-size = 0
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #000000
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-separator = |
-
-;dim-value = 1.0
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
-#i3: Make the bar appear below windows
-;wm-restack = i3
-;override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-; Fallback click handlers that will be called if
-; there's no matching module handler found.
-click-left =
-click-middle =
-click-right =
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-double-click-left =
-double-click-middle =
-double-click-right =
-
-; Requires polybar to be built with xcursor support (xcb-util-cursor)
-; Possible values are:
-; - default   : The default pointer as before, can also be an empty string (default)
-; - pointer   : Typically in the form of a hand
-; - ns-resize : Up and down arrows, can be used to indicate scrolling
-cursor-click =
-cursor-scroll =
-
-################################################################################
-################################################################################
-############                    MAINBAR-OPENBOX                     ############
-################################################################################
-################################################################################
-
-[bar/mainbar-openbox]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-;border-color = #00000000
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = ewmh xwindow
-modules-center = kernel
-modules-right =  memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-
-
-################################################################################
-################################################################################
-############                    MAINBAR-OPENBOX-EXTRA               ############
-################################################################################
-################################################################################
-
-[bar/mainbar-openbox-extra]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = true
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-;border-color = #00000000
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
 ############                  MAINBAR-BSPWM                         ############
 ################################################################################
 ################################################################################
 
 [bar/mainbar-bspwm]
-monitor = ${env:MONITOR}
-monitor-fallback = DisplayPort-0
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-wm-restack = bspwm
-override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-border-size = 0
-;border-left-size = 0
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = bspwm xwindow
-modules-center = kernel spotify2
-modules-right = pavolume memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-BSPWM-EXTRA                   ############
-################################################################################
-################################################################################
-
-[bar/mainbar-bspwm-extra]
 monitor = ${env:MONITOR}
 monitor-fallback = DisplayPort-1
 width = 100%
@@ -470,8 +107,8 @@ height = 30
 ;offset-y = 1%
 radius = 0.0
 fixed-center = true
-bottom = true
-separator = |
+bottom = false
+separator = 
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -503,994 +140,27 @@ module-margin-right = 3
 font-0 = "Noto Sans:size=10;0"
 font-1 = "FontAwesome:size=13;0"
 font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
+font-3 = "Noto Sans CJK JP:size=16:weight=medium;2"
+font-4 = "Noto Sans CJK JP:size=13;0"
 
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
+modules-left = bspwm xwindow
+modules-center = spotify1 spotify-prev spotify-play-pause spotify-next 
+modules-right = pavolume date
 
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
+tray-detached = false
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 2
+tray-maxsize = 20
+tray-scale = 1.0
+tray-position = right
+tray-background = ${colors.background}
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
 
 
-################################################################################
-################################################################################
-############                  MAINBAR-HERBSTLUFTWM                  ############
-################################################################################
-################################################################################
-
-[bar/mainbar-herbstluftwm]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-wm-restack = bspwm
-override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-border-size = 0
-;border-left-size = 0
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = ewmh xwindow
-modules-center = kernel
-modules-right = pavolume memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-scroll-up = herbstclient use_index -1
-scroll-down = herbstclient use_index +1
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-HERBSTLUFTWM-EXTRA            ############
-################################################################################
-################################################################################
-
-[bar/mainbar-herbstluftwm-extra]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = true
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-wm-restack = bspwm
-override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-border-size = 0
-;border-left-size = 0
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
-scroll-up = herbstclient use_index -1
-scroll-down = herbstclient use_index +1
-
-################################################################################
-################################################################################
-############                  MAINBAR-XMONAD                        ############
-################################################################################
-################################################################################
-
-[bar/mainbar-xmonad]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-font-4 = "FontAwesome5Brands:size=13;0"
-
-modules-left = ewmh
-modules-center = kernel
-modules-right = pavolume memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-XMONAD-EXTRA                  ############
-################################################################################
-################################################################################
-
-[bar/mainbar-xmonad-extra]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = true
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-border-top-size = 10
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-font-4 = "FontAwesome5Brands:size=13;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-SPECTRWM                      ############
-################################################################################
-################################################################################
-
-[bar/mainbar-spectrwm]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-wm-restack = bspwm
-override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-border-size = 0
-;border-left-size = 0
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=10;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = ewmh xwindow
-modules-center = kernel
-modules-right = pavolume memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-scroll-up = spectrwm-desknext
-scroll-down = spectrwm-deskprev
-
-################################################################################
-################################################################################
-############                  MAINBAR-CWM                           ############
-################################################################################
-################################################################################
-
-[bar/mainbar-cwm]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-border-size = 0
-;border-left-size = 0
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left =  ewmh xwindow
-modules-center = kernel
-modules-right = pavolume memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-scroll-up = cwm-desknext
-scroll-down = cwm-deskprev
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-CWM-EXTRA                     ############
-################################################################################
-################################################################################
-
-[bar/mainbar-cwm-extra]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = true
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-wm-restack = bspwm
-override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-border-size = 0
-;border-left-size = 0
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
-scroll-up = cwm-desknext
-scroll-down = cwm-deskprev
-
-################################################################################
-################################################################################
-############                  MAINBAR-FVWM3                         ############
-################################################################################
-################################################################################
-
-[bar/mainbar-fvwm3]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-border-size = 0
-;border-left-size = 0
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left =  ewmh xwindow
-modules-center = kernel
-modules-right = pavolume memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-scroll-up = fvwm3-desknext
-scroll-down = fvwm3-deskprev
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-FVWM3-EXTRA                   ############
-################################################################################
-################################################################################
-
-[bar/mainbar-fvwm3-extra]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = true
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-wm-restack = bspwm
-override-redirect = true
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-border-size = 0
-;border-left-size = 0
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
-scroll-up = fvwm3-desknext
-scroll-down = fvwm3-deskprev
-
-################################################################################
-################################################################################
-############                  MAINBAR-WMDERLAND                     ############
-################################################################################
-################################################################################
-
-[bar/mainbar-wmderland]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-font-4 = "FontAwesome5Brands:size=13;0"
-
-modules-left = ewmh
-modules-center = kernel
-modules-right = pavolume memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-WMDERLAND-EXTRA               ############
-################################################################################
-################################################################################
-
-[bar/mainbar-wmderland-extra]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = true
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-border-top-size = 10
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-font-4 = "FontAwesome5Brands:size=13;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-LEFTWM                        ############
-################################################################################
-################################################################################
-
-[bar/mainbar-leftwm]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = false
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-font-4 = "FontAwesome5Brands:size=13;0"
-
-modules-left = ewmh
-modules-center = kernel
-modules-right = pavolume memory2 cpu2 date
-
-tray-detached = false
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 2
-tray-maxsize = 20
-tray-scale = 1.0
-tray-position = right
-tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
-############                  MAINBAR-LEFTWM-EXTRA               ############
-################################################################################
-################################################################################
-
-[bar/mainbar-leftwm-extra]
-monitor = ${env:MONITOR}
-;monitor-fallback = HDMI1
-monitor-strict = false
-override-redirect = false
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-bottom = true
-separator = |
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 2
-line-color = #f00
-
-;border-size = 2
-;border-left-size = 25
-;border-right-size = 25
-border-top-size = 10
-;border-bottom-size = 25
-border-color = #00000000
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 3
-module-margin-right = 3
-
-; Enable support for inter-process messaging
-; See the Messaging wiki page for more details.
-enable-ipc = true
-
-;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
-font-4 = "FontAwesome5Brands:size=13;0"
-
-modules-left = load-average
-modules-center = networkspeeddown networkspeedup
-modules-right = filesystem
-
-;tray-detached = false
-;tray-offset-x = 0
-;tray-offset-y = 0
-;tray-padding = 2
-;tray-maxsize = 20
-;tray-scale = 1.0
-;tray-position = right
-;tray-background = ${colors.background}
-
-
-################################################################################
-################################################################################
-############                       MODULE I3                        ############
-################################################################################
-################################################################################
-
-[module/i3]
-;https://github.com/jaagr/polybar/wiki/Module:-i3
-type = internal/i3
-
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
-pin-workspaces = true
-
-; This will split the workspace name on ':'
-; Default: false
-strip-wsnumbers = false
-
-; Sort the workspaces by index instead of the default
-; sorting that groups the workspaces by output
-; Default: false
-index-sort = false
-
-; Create click handler used to focus workspace
-; Default: true
-enable-click = true
-
-; Create scroll handlers used to cycle workspaces
-; Default: true
-enable-scroll = true
-
-; Wrap around when reaching the first/last workspace
-; Default: true
-wrapping-scroll = false
-
-; Set the scroll cycle direction
-; Default: true
-reverse-scroll = false
-
-; Use fuzzy (partial) matching on labels when assigning
-; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces
-; containing 'code' in the label
-; Default: false
-fuzzy-match = false
-
-;extra icons to choose from
-;http://fontawesome.io/cheatsheet/
-;       v     
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-ws-icon-default = " "
-
-; Available tags:
-;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
-;   <label-mode> (default)
-format = <label-state> <label-mode>
-
-label-mode = %mode%
-label-mode-padding = 2
-label-mode-foreground = #000000
-label-mode-background = #FFBB00
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-; focused = Active workspace on focused monitor
-label-focused = %icon% %name%
-label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.foreground}
-label-focused-underline = #6790eb
-label-focused-padding = 2
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon% %name%
-label-unfocused-padding = 2
-label-unfocused-background = ${colors.background}
-label-unfocused-foreground = ${colors.foreground}
-label-unfocused-underline =
-
-; visible = Active workspace on unfocused monitor
-label-visible = %icon% %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = 2
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-; urgent = Workspace with urgency hint set
-label-urgent = %icon% %name%
-label-urgent-background = ${self.label-focused-background}
-label-urgent-foreground = #db104e
-label-urgent-padding = 2
-
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-################################################################################
+###############################################################################
 ################################################################################
 ############                       MODULE BSPWM                     ############
 ################################################################################
@@ -1504,37 +174,39 @@ enable-scroll = true
 reverse-scroll = true
 pin-workspaces = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
+
+ws-icon-0 = 1;㊀
+ws-icon-1 = 2;㊁
+ws-icon-2 = 3;㊂
+ws-icon-3 = 4;㊃
+ws-icon-4 = 5;㊄
+ws-icon-5 = 6;㊅
+ws-icon-6 = 7;㊆
+ws-icon-7 = 8;㊇ 
+ws-icon-8 = 9;㊈
+ws-icon-9 = 10;㊉
 ws-icon-default = " "
 
 
 format = <label-state> <label-mode>
 
+
 label-focused = %icon%
-label-focused-background = ${colors.background}
-label-focused-underline= #6790eb
-label-focused-padding = 4
-label-focused-foreground = #6790EB
+label-focused-background = ${colors.terminal-black}
+label-focused-underline= ${colors.terminal-magenta}
+label-focused-padding = 2
+label-focused-foreground = ${colors.terminal-magenta} 
 
 label-occupied = %icon%
 label-occupied-padding = 2
 label-occupied-background = ${colors.background}
-label-occupied-foreground = #6790EB
+label-occupied-foreground = ${colors.terminal-magenta} 
 
 label-urgent = %icon%
 label-urgent-padding = 2
 
 label-empty = %icon%
-label-empty-foreground = ${colors.foreground}
+label-empty-foreground = ${colors.comments-blue}
 label-empty-padding = 2
 label-empty-background = ${colors.background}
 label-monocle = "  "
@@ -1775,13 +447,13 @@ type = internal/date
 interval = 5
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date = " %Y-%m-%d%"
-date-alt = " %d-%m-%Y"
-time = %H:%M
+date = " %A %b %d " 
+date-alt = " %b-%d-%Y " 
+time = %I:%M
 time-alt = %H:%M
 format-prefix = " "
-format-prefix-foreground = #c1941a
-format-underline = #c1941a
+format-prefix-foreground = #c0caf5
+format-underline =
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 label = %date% %time%
@@ -1910,9 +582,9 @@ interval = 1024
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #0084FF
-format-underline = #0084FF
+format-prefix = "  "
+format-prefix-foreground = #cfc9c2
+format-underline = 
 
 ################################################################################
 
@@ -2119,7 +791,7 @@ click-right = exec pavucontrol
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-underline = #3EC13F
+format-underline = 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
@@ -2164,7 +836,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 ################################################################################
-
+; CURRENT
 [module/spotify1]
 ;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
 type = custom/script
@@ -2173,11 +845,11 @@ interval = 1
 
 ;format = <label>
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-padding = 2
-format-underline = #0f0
-format-prefix = "  "
-format-prefix-foreground = #0f0
+format-background = ${colors.storm-background}
+format-padding = 4
+format-underline = ${colors.green-accent} 
+format-prefix = "   "
+format-prefix-foreground = ${colors.green-accent}
 label = %output:0:150%
 
 ################################################################################
@@ -2190,13 +862,13 @@ tail = true
 format-prefix = "  "
 format = <label>
 format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-background = #2ac3de
 exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
 
 
 [module/spotify-prev]
 type = custom/script
-exec = echo ""
+exec = echo ""
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -2207,7 +879,7 @@ click-right = spotify
 type = custom/ipc
 hook-0 = echo ""
 hook-1 = echo ""
-initial = 1
+initial =1 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 click-left = playerctl play-pause spotify
@@ -2215,7 +887,7 @@ click-right = spotify
 
 [module/spotify-next]
 type = custom/script
-exec = echo ""
+exec = echo ""
 format = <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
