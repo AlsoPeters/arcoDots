@@ -21,7 +21,7 @@ EXIT_CODE=$?
 if [ $EXIT_CODE -eq 0 ]; then
     STATUS=$PLAYERCTL_STATUS
 else
-    STATUS="No player is running"
+    STATUS=" testing "
 fi
 
 if [ "$1" == "--status" ]; then
