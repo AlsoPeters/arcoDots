@@ -1,4 +1,3 @@
-
 local utils = {}
 --
 -- Does package.json file contain speficied configuration or dependency?

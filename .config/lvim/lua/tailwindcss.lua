@@ -1,4 +1,3 @@
-
 --
 -- Activate LunarVim tailwindcss lsp configuration only
 -- if project seems to have a tailwindcss dependency

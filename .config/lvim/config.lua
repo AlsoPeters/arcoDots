@@ -9,11 +9,11 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
-vim.opt.relativenumber = true
 lvim.log.level = "warn"
 lvim.format_on_save = true
-vim.g.tokyonight_style = "night"
 lvim.colorscheme = "tokyonight"
+vim.g.tokyonight_style = "night"
+vim.opt.relativenumber = true
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -119,36 +119,59 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 local formatters = require "lvim.lsp.null-ls.formatters"
-
 formatters.setup {
   {
     exe = "prettier",
     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", },
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   },
 }
+
+require "headwind".setup {
+  -- options here
+}
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--   { exe = "black", filetypes = { "python" } },
+--   { exe = "isort", filetypes = { "python" } },
+--   {
+--     exe = "prettier",
+--     ---@usage arguments to pass to the formatter
+--     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+--     args = { "--print-with", "100" },
+--     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+--     filetypes = { "typescript", "typescriptreact" },
+--   },
+-- }
 
 -- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
+--   { exe = "flake8", filetypes = { "python" } },
 --   {
---     exe = "prettier",
+--     exe = "shellcheck",
+--     ---@usage arguments to pass to the formatter
+--     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+--     args = { "--severity", "warning" },
+--   },
+--   {
+--     exe = "codespell",
 --     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", },
+--     filetypes = { "javascript", "python" },
 --   },
 -- }
 
 -- Additional Plugins
 lvim.plugins = {
-     {"folke/tokyonight.nvim"},
+    {"folke/tokyonight.nvim"},
+  {"steelsojka/headwind.nvim"}
 --     {
 --       "folke/trouble.nvim",
 --       cmd = "TroubleToggle",
 --     },
- }
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.lua", "setlocal ts=8 sw=8" },
 -- }
-require "tailwindcss"
